@@ -2,7 +2,7 @@ package org.auioc.mods.itemexporter.exporter;
 
 import static org.auioc.mods.itemexporter.ItemExporter.LOGGER;
 import java.io.IOException;
-import java.util.stream.Stream;
+import java.util.List;
 import org.apache.logging.log4j.Marker;
 import org.auioc.mods.arnicalib.utils.LogUtil;
 import org.auioc.mods.arnicalib.utils.java.FileUtils;
@@ -50,8 +50,10 @@ public class Exporter {
         exportJson(item);
     }
 
-    public static void export(Stream<Item> items) {
-        items.forEach((item) -> export(item));
+    public static void export(List<Item> itemList) {
+        for (var item : itemList) {
+            export(item);
+        }
     }
 
 }

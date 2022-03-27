@@ -6,5 +6,7 @@
     "itemexporter.command.config.language.remove.failure": "无法移除语言%s：已配置的语言中不存在此语言",
 
     "itemexporter.command.config.tag.minecraft_only.get.success": "仅包含Minecraft命名空间中的标签：%s",
-    "itemexporter.command.config.tag.minecraft_only.set.success": "仅包含Minecraft命名空间中的标签已设置为%s"
+    "itemexporter.command.config.tag.minecraft_only.set.success": "仅包含Minecraft命名空间中的标签已设置为%s",
+
+    "itemexporter.command.export.success": "导出%s个物品成功"
 }
