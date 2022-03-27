@@ -1,0 +1,10 @@
+{
+    "itemexporter.command.config.language.list.success": "已设置的语言: %s",
+    "itemexporter.command.config.language.add.success": "成功添加语言%s",
+    "itemexporter.command.config.language.add.failure": "无法添加语言%s：已配置的语言中已存在此语言",
+    "itemexporter.command.config.language.remove.success": "成功移除语言%s",
+    "itemexporter.command.config.language.remove.failure": "无法移除语言%s：已配置的语言中不存在此语言",
+
+    "itemexporter.command.config.tag.minecraft_only.get.success": "仅包含Minecraft命名空间中的标签：%s",
+    "itemexporter.command.config.tag.minecraft_only.set.success": "仅包含Minecraft命名空间中的标签已设置为%s"
+}
