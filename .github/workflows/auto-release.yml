@@ -68,7 +68,7 @@ jobs:
               env:
                   CI_VERSION: ${{needs.first.outputs.ci_version}}
                   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-              run: ./gradlew clean build publish genUpdateJson
+              run: ./gradlew clean build publish
 
             - name: Upload build artifacts
               uses: actions/upload-artifact@v1
