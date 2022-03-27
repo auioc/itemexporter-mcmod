@@ -6,6 +6,7 @@ import org.auioc.mods.arnicalib.client.command.AHClientCommands;
 import org.auioc.mods.arnicalib.common.command.impl.VersionCommand;
 import org.auioc.mods.arnicalib.utils.game.CommandUtils.CommandFeedbackHelper;
 import org.auioc.mods.itemexporter.ItemExporter;
+import org.auioc.mods.itemexporter.command.impl.ConfigCommand;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -20,6 +21,8 @@ public class IEClientCommands {
 
     public static void register(final RegisterClientCommandsEvent event) {
         NODE.addChild(literal("version").executes((ctx) -> VersionCommand.getModVersion(ctx, ItemExporter.MAIN_VERSION, ItemExporter.FULL_VERSION, ItemExporter.MOD_NAME)).build());
+
+        NODE.addChild(ConfigCommand.NODE);
 
         AHClientCommands.getRootNode(event.getDispatcher()).addChild(NODE);
     }
