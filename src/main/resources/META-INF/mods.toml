@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+license="GNU GPLv3"
+
+[[mods]]
+modId="itemexporter"
+version="${file.jarVersion}"
+displayName="ItemExporter"
+credits="AUIOC"
+authors="WakelssSloth56"
+description='''
+'''
+
+[[dependencies.itemexporter]]
+    modId="forge"
+    mandatory=true
+    versionRange="[40,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.itemexporter]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2,1.19)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.itemexporter]]
+    modId="arnicalib"
+    mandatory=true
+    versionRange="[5.0.1,)"
+    ordering="NONE"
+    side="BOTH"
