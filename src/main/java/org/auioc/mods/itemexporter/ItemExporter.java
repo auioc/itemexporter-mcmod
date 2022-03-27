@@ -8,6 +8,8 @@ import org.auioc.mods.arnicalib.utils.java.VersionUtils;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fml.DistExecutor;
+import net.minecraftforge.fml.IExtensionPoint;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod(ItemExporter.MOD_ID)
@@ -22,6 +24,11 @@ public final class ItemExporter {
     private static final Marker CORE = LogUtil.getMarker("CORE");
 
     public ItemExporter() {
+        ModLoadingContext.get().registerExtensionPoint(
+            IExtensionPoint.DisplayTest.class,
+            () -> new IExtensionPoint.DisplayTest(() -> "ANY", (remote, isServer) -> isServer)
+        );
+
         DistExecutor.safeRunWhenOn(
             Dist.CLIENT,
             () -> new DistExecutor.SafeRunnable() {
