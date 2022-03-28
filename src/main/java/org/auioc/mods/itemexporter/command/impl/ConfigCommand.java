@@ -8,6 +8,8 @@ import com.mojang.brigadier.arguments.BoolArgumentType;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.tree.CommandNode;
+import org.auioc.mods.arnicalib.api.java.holder.ObjectHolder;
+import org.auioc.mods.arnicalib.utils.game.CommandUtils;
 import org.auioc.mods.arnicalib.utils.game.LanguageUtils;
 import org.auioc.mods.itemexporter.config.IEConfig;
 import net.minecraft.commands.CommandSourceStack;
@@ -39,15 +41,23 @@ public class ConfigCommand {
             literal("tag")
                 .then(
                     literal("minecraftOnly")
-                        .executes(TagNodeHandler::getMinecraftOnly)
+                        .executes((ctx) -> get(ctx, IEConfig.MINECRAFT_TAG_ONLY))
                         .then(
                             argument("minecraftOnly", BoolArgumentType.bool())
-                                .executes(TagNodeHandler::setMinecraftOnly)
+                                .executes((ctx) -> set(ctx, IEConfig.MINECRAFT_TAG_ONLY, BoolArgumentType.getBool(ctx, "minecraftOnly")))
                         )
                 )
         )
         .build();
 
+    private static <T> int get(CommandContext<CommandSourceStack> ctx, ObjectHolder<T> configValue) {
+        return FEEDBACK_HELPER.success(ctx, CommandUtils.joinLiteralNodes(ctx.getNodes(), 2) + ".get", configValue.get());
+    }
+
+    private static <T> int set(CommandContext<CommandSourceStack> ctx, ObjectHolder<T> configValue, T newValue) {
+        configValue.set(newValue);
+        return FEEDBACK_HELPER.success(ctx, CommandUtils.joinLiteralNodes(ctx.getNodes(), 2) + ".set", newValue);
+    }
 
     private static class LanguageNodeHandler {
 
@@ -75,22 +85,6 @@ public class ConfigCommand {
                 return FEEDBACK_HELPER.success(ctx, messageKey, langCode);
             }
             return FEEDBACK_HELPER.failure(ctx, messageKey, langCode);
-        }
-
-    }
-
-    private static class TagNodeHandler {
-
-        private static int getMinecraftOnly(CommandContext<CommandSourceStack> ctx) {
-            return FEEDBACK_HELPER.success(ctx, "config.tag.minecraft_only.get", IEConfig.MINECRAFT_TAG_ONLY.get());
-        }
-
-        private static int setMinecraftOnly(CommandContext<CommandSourceStack> ctx) {
-            boolean b = BoolArgumentType.getBool(ctx, "minecraftOnly");
-
-            IEConfig.MINECRAFT_TAG_ONLY.set(b);
-
-            return FEEDBACK_HELPER.success(ctx, "config.tag.minecraft_only.set", b);
         }
 
     }
