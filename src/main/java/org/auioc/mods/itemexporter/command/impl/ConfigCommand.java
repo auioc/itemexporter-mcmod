@@ -17,7 +17,7 @@ public class ConfigCommand {
     public static final CommandNode<CommandSourceStack> NODE = literal("config")
         .then(
             literal("language")
-                .then(literal("list").executes(LanguageNodeHandler::list))
+                .executes(LanguageNodeHandler::list)
                 .then(
                     literal("add")
                         .then(
@@ -39,13 +39,10 @@ public class ConfigCommand {
             literal("tag")
                 .then(
                     literal("minecraftOnly")
-                        .then(literal("get").executes(TagNodeHandler::getMinecraftOnly))
+                        .executes(TagNodeHandler::getMinecraftOnly)
                         .then(
-                            literal("set")
-                                .then(
-                                    argument("minecraftOnly", BoolArgumentType.bool())
-                                        .executes(TagNodeHandler::setMinecraftOnly)
-                                )
+                            argument("minecraftOnly", BoolArgumentType.bool())
+                                .executes(TagNodeHandler::setMinecraftOnly)
                         )
                 )
         )
