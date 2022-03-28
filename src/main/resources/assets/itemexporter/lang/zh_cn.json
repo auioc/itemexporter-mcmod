@@ -8,6 +8,9 @@
     "itemexporter.command.config.tag.minecraft_only.get.success": "仅包含Minecraft命名空间中的标签：%s",
     "itemexporter.command.config.tag.minecraft_only.set.success": "仅包含Minecraft命名空间中的标签已设置为%s",
 
+    "itemexporter.command.config.image.size.get.success": "导出图片尺寸：%s",
+    "itemexporter.command.config.image.size.set.success": "导出图片尺寸已设置为%s",
+
     "itemexporter.command.config.export.export_json_to_stdout.get.success": "导出JSON到标准输出：%s",
     "itemexporter.command.config.export.export_json_to_stdout.set.success": "导出JSON到标准输出已设置为%s",
 
