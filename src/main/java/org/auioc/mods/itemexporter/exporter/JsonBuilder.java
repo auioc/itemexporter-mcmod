@@ -49,6 +49,7 @@ public class JsonBuilder {
 
         item.getCreativeTabs()
             .stream()
+            .filter((tab) -> tab != null)
             .map((tab) -> (TranslatableComponent) tab.getDisplayName())
             .map(TranslatableComponent::getKey)
             .map((name) -> name.replaceFirst("^itemGroup\\.", ""))
