@@ -29,6 +29,8 @@ public class ConfigCommand {
         )
         .then(
             literal("export")
+                .then(createBooleanConfigNode("exportJson", IEConfig.EXPORT_JSON))
+                .then(createBooleanConfigNode("exportImage", IEConfig.EXPORT_IMAGE))
                 .then(createBooleanConfigNode("exportJsonToStdout", IEConfig.EXPORT_JSON_TO_STDOUT))
         )
         .build();

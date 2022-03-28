@@ -49,8 +49,12 @@ public class Exporter {
     }
 
     public static void export(Item item) {
-        exportImage(item);
-        exportJson(item);
+        if (IEConfig.EXPORT_JSON.get()) {
+            exportJson(item);
+        }
+        if (IEConfig.EXPORT_IMAGE.get()) {
+            exportImage(item);
+        }
     }
 
     public static void export(List<Item> itemList) {

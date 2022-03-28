@@ -11,8 +11,14 @@
     "itemexporter.command.config.image.size.get.success": "导出图片尺寸：%s",
     "itemexporter.command.config.image.size.set.success": "导出图片尺寸已设置为%s",
 
+    "itemexporter.command.config.export.export_json.get.success": "导出JSON：%s",
+    "itemexporter.command.config.export.export_json.set.success": "导出JSON已设置为%s",
+
     "itemexporter.command.config.export.export_json_to_stdout.get.success": "导出JSON到标准输出：%s",
     "itemexporter.command.config.export.export_json_to_stdout.set.success": "导出JSON到标准输出已设置为%s",
+
+    "itemexporter.command.config.export.export_image.get.success": "导出图片：%s",
+    "itemexporter.command.config.export.export_image.set.success": "导出图片已设置为%s",
 
     "itemexporter.command.export.success": "导出%s个物品成功"
 }
