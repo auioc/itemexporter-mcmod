@@ -8,6 +8,7 @@ import com.mojang.brigadier.arguments.BoolArgumentType;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.tree.CommandNode;
+import org.auioc.mods.arnicalib.api.java.holder.BooleanHolder;
 import org.auioc.mods.arnicalib.api.java.holder.ObjectHolder;
 import org.auioc.mods.arnicalib.utils.game.CommandUtils;
 import org.auioc.mods.arnicalib.utils.game.LanguageUtils;
@@ -44,7 +45,7 @@ public class ConfigCommand {
                         .executes((ctx) -> get(ctx, IEConfig.MINECRAFT_TAG_ONLY))
                         .then(
                             argument("minecraftOnly", BoolArgumentType.bool())
-                                .executes((ctx) -> set(ctx, IEConfig.MINECRAFT_TAG_ONLY, BoolArgumentType.getBool(ctx, "minecraftOnly")))
+                                .executes((ctx) -> setBoolean(ctx, IEConfig.MINECRAFT_TAG_ONLY))
                         )
                 )
         )
@@ -55,7 +56,7 @@ public class ConfigCommand {
                         .executes((ctx) -> get(ctx, IEConfig.EXPORT_JSON_TO_STDOUT))
                         .then(
                             argument("exportJsonToStdout", BoolArgumentType.bool())
-                                .executes((ctx) -> set(ctx, IEConfig.EXPORT_JSON_TO_STDOUT, BoolArgumentType.getBool(ctx, "exportJsonToStdout")))
+                                .executes((ctx) -> setBoolean(ctx, IEConfig.EXPORT_JSON_TO_STDOUT))
                         )
                 )
         )
@@ -68,6 +69,12 @@ public class ConfigCommand {
     private static <T> int set(CommandContext<CommandSourceStack> ctx, ObjectHolder<T> configValue, T newValue) {
         configValue.set(newValue);
         return FEEDBACK_HELPER.success(ctx, CommandUtils.joinLiteralNodes(ctx.getNodes(), 2) + ".set", newValue);
+    }
+
+    private static int setBoolean(CommandContext<CommandSourceStack> ctx, BooleanHolder configValue) {
+        var nodes = ctx.getNodes();
+        var argName = nodes.get(nodes.size() - 1).getNode().getName();
+        return set(ctx, configValue, BoolArgumentType.getBool(ctx, argName));
     }
 
     private static class LanguageNodeHandler {
