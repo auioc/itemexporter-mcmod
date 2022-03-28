@@ -48,6 +48,17 @@ public class ConfigCommand {
                         )
                 )
         )
+        .then(
+            literal("export")
+                .then(
+                    literal("exportJsonToStdout")
+                        .executes((ctx) -> get(ctx, IEConfig.EXPORT_JSON_TO_STDOUT))
+                        .then(
+                            argument("exportJsonToStdout", BoolArgumentType.bool())
+                                .executes((ctx) -> set(ctx, IEConfig.EXPORT_JSON_TO_STDOUT, BoolArgumentType.getBool(ctx, "exportJsonToStdout")))
+                        )
+                )
+        )
         .build();
 
     private static <T> int get(CommandContext<CommandSourceStack> ctx, ObjectHolder<T> configValue) {

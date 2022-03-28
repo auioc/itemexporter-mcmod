@@ -15,14 +15,17 @@ public class Exporter {
     private static final Marker MARKER = LogUtil.getMarker(Exporter.class);
 
     private static void exportJson(Item item) {
-        var fileName = "export/json/" + item.getRegistryName().getPath() + ".json";
+        var jsonString = JsonBuilder.buildItemJson(item).toString();
 
-        var jsonText = JsonBuilder.buildItemJson(item).toString();
-
-        try {
-            FileUtils.writeText(fileName, jsonText);
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (IEConfig.EXPORT_JSON_TO_STDOUT.get()) {
+            System.out.println(jsonString);
+        } else {
+            var fileName = "export/json/" + item.getRegistryName().getPath() + ".json";
+            try {
+                FileUtils.writeText(fileName, jsonString);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
