@@ -22,7 +22,7 @@ public class IEClientCommands {
     public static final CommandFeedbackHelper FEEDBACK_HELPER = new CommandFeedbackHelper(TextUtils.I18nText(ItemExporter.i18n("command.prefix")), ItemExporter::i18n);
 
     public static void register(final RegisterClientCommandsEvent event) {
-        NODE.addChild(literal("version").executes((ctx) -> VersionCommand.getModVersion(ctx, ItemExporter.class)).build());
+        VersionCommand.addVersionNode(NODE, ItemExporter.class);
 
         NODE.addChild(ConfigCommand.NODE);
         NODE.addChild(ExportCommand.NODE);
