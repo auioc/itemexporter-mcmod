@@ -1,4 +1,8 @@
 {
+    "itemexporter.title": "ItemExporter",
+
+    "itemexporter.command.prefix": "§b[ItemExporter]§r ",
+
     "itemexporter.command.config.language.list.success": "已设置的语言: %s",
     "itemexporter.command.config.language.add.success": "成功添加语言%s",
     "itemexporter.command.config.language.add.failure": "无法添加语言%s：已配置的语言中已存在此语言",
