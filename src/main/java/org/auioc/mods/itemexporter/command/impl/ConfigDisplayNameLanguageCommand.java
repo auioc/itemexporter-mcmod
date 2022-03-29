@@ -11,43 +11,43 @@ import org.auioc.mods.arnicalib.utils.game.LanguageUtils;
 import org.auioc.mods.itemexporter.config.IEConfig;
 import net.minecraft.commands.CommandSourceStack;
 
-public class ConfigLanguageCommand {
+public class ConfigDisplayNameLanguageCommand {
 
-    public static final LiteralArgumentBuilder<CommandSourceStack> BUILDER = literal("language")
-        .executes(ConfigLanguageCommand::list)
+    public static final LiteralArgumentBuilder<CommandSourceStack> BUILDER = literal("displayNameLanguage")
+        .executes(ConfigDisplayNameLanguageCommand::list)
         .then(
             literal("add")
                 .then(
                     argument("langCode", StringArgumentType.string())
                         .suggests(LanguageUtils.ALL_LANGUAGES_SUGGESTION)
-                        .executes(ConfigLanguageCommand::add)
+                        .executes(ConfigDisplayNameLanguageCommand::add)
                 )
         )
         .then(
             literal("remove")
                 .then(
                     argument("langCode", StringArgumentType.string())
-                        .suggests(IEConfig.LANGUAGES.getCommandSuggestion())
-                        .executes(ConfigLanguageCommand::remove)
+                        .suggests(IEConfig.DISPLAY_NAME_LANGUAGE.getCommandSuggestion())
+                        .executes(ConfigDisplayNameLanguageCommand::remove)
                 )
         );
 
     private static int list(CommandContext<CommandSourceStack> ctx) {
         var sb = new StringBuffer();
-        IEConfig.LANGUAGES.get().forEach((langCode, _v) -> {
+        IEConfig.DISPLAY_NAME_LANGUAGE.get().forEach((langCode, _v) -> {
             sb.append(langCode).append(", ");
         });
         sb.delete(sb.length() - 2, sb.length());
 
-        return FEEDBACK_HELPER.success(ctx, "config.language.list", sb.toString());
+        return FEEDBACK_HELPER.success(ctx, "config.json.display_name_language.list", sb.toString());
     }
 
     private static int add(CommandContext<CommandSourceStack> ctx) {
-        return processLangCodeArgument(ctx, (s) -> IEConfig.LANGUAGES.add(s), "config.language.add");
+        return processLangCodeArgument(ctx, (s) -> IEConfig.DISPLAY_NAME_LANGUAGE.add(s), "config.json.display_name_language.add");
     }
 
     private static int remove(CommandContext<CommandSourceStack> ctx) {
-        return processLangCodeArgument(ctx, (s) -> IEConfig.LANGUAGES.remove(s), "config.language.remove");
+        return processLangCodeArgument(ctx, (s) -> IEConfig.DISPLAY_NAME_LANGUAGE.remove(s), "config.json.display_name_language.remove");
     }
 
     private static int processLangCodeArgument(CommandContext<CommandSourceStack> ctx, Function<String, Boolean> action, String messageKey) {

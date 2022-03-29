@@ -14,9 +14,15 @@ public class JsonBuilder {
         var json = new JsonObject();
 
         json.addProperty("registry_name", item.getRegistryName().toString());
-        json.add("display_name", buildDisplayNameJson(item));
-        json.add("tags", buildTagJson(item));
-        json.add("creative_tabs", buildCreativeTabJson(item));
+        if (IEConfig.JSON_INCLUDE_DISPLAY_NAME.get()) {
+            json.add("display_name", buildDisplayNameJson(item));
+        }
+        if (IEConfig.JSON_INCLUDE_TAG.get()) {
+            json.add("tags", buildTagJson(item));
+        }
+        if (IEConfig.JSON_INCLUDE_CREATIVE_TAB.get()) {
+            json.add("creative_tabs", buildCreativeTabJson(item));
+        }
 
         return json;
     }
@@ -24,7 +30,7 @@ public class JsonBuilder {
     private static JsonObject buildDisplayNameJson(Item item) {
         var json = new JsonObject();
 
-        IEConfig.LANGUAGES.get().forEach((langCode, clientLanguage) -> {
+        IEConfig.DISPLAY_NAME_LANGUAGE.get().forEach((langCode, clientLanguage) -> {
             json.addProperty(langCode, clientLanguage.getOrDefault(item.getDescriptionId()));
         });
 

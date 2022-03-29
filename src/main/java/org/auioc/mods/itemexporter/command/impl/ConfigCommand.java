@@ -18,10 +18,13 @@ import net.minecraft.commands.CommandSourceStack;
 public class ConfigCommand {
 
     public static final CommandNode<CommandSourceStack> NODE = literal("config")
-        .then(ConfigLanguageCommand.BUILDER)
         .then(
-            literal("tag")
-                .then(createBooleanConfigNode("minecraftOnly", IEConfig.MINECRAFT_TAG_ONLY))
+            literal("json")
+                .then(ConfigDisplayNameLanguageCommand.BUILDER)
+                .then(createBooleanConfigNode("includeTag", IEConfig.JSON_INCLUDE_TAG))
+                .then(createBooleanConfigNode("includeDisplayName", IEConfig.JSON_INCLUDE_DISPLAY_NAME))
+                .then(createBooleanConfigNode("includeCreativeTab", IEConfig.JSON_INCLUDE_CREATIVE_TAB))
+                .then(createBooleanConfigNode("minecraftTagOnly", IEConfig.MINECRAFT_TAG_ONLY))
         )
         .then(
             literal("image")

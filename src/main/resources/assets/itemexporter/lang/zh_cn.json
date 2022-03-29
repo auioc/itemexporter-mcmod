@@ -3,17 +3,7 @@
 
     "itemexporter.command.prefix": "§b[ItemExporter]§r ",
 
-    "itemexporter.command.config.language.list.success": "已设置的语言: %s",
-    "itemexporter.command.config.language.add.success": "成功添加语言%s",
-    "itemexporter.command.config.language.add.failure": "无法添加语言%s：已配置的语言中已存在此语言",
-    "itemexporter.command.config.language.remove.success": "成功移除语言%s",
-    "itemexporter.command.config.language.remove.failure": "无法移除语言%s：已配置的语言中不存在此语言",
-
-    "itemexporter.command.config.tag.minecraft_only.get.success": "仅包含Minecraft命名空间中的标签：%s",
-    "itemexporter.command.config.tag.minecraft_only.set.success": "仅包含Minecraft命名空间中的标签已设置为%s",
-
-    "itemexporter.command.config.image.size.get.success": "导出图片尺寸：%s",
-    "itemexporter.command.config.image.size.set.success": "导出图片尺寸已设置为%s",
+    "itemexporter.command.export.success": "导出%s个物品成功",
 
     "itemexporter.command.config.export.export_json.get.success": "导出JSON：%s",
     "itemexporter.command.config.export.export_json.set.success": "导出JSON已设置为%s",
@@ -21,8 +11,27 @@
     "itemexporter.command.config.export.export_json_to_stdout.get.success": "导出JSON到标准输出：%s",
     "itemexporter.command.config.export.export_json_to_stdout.set.success": "导出JSON到标准输出已设置为%s",
 
+    "itemexporter.command.config.json.include_display_name.get.success": "导出物品显示名称：%s",
+    "itemexporter.command.config.json.include_display_name.set.success": "导出物品显示名称已设置为%s",
+
+    "itemexporter.command.config.json.display_name_language.list.success": "已设置的物品显示名称语言: %s",
+    "itemexporter.command.config.json.display_name_language.add.success": "成功添加物品显示名称语言%s",
+    "itemexporter.command.config.json.display_name_language.add.failure": "无法添加物品显示名称语言%s：已配置的语言中已存在此语言",
+    "itemexporter.command.config.json.display_name_language.remove.success": "成功移除物品显示名称语言%s",
+    "itemexporter.command.config.json.display_name_language.remove.failure": "无法移除物品显示名称语言%s：已配置的语言中不存在此语言",
+
+    "itemexporter.command.config.json.include_tag.get.success": "导出物品标签：%s",
+    "itemexporter.command.config.json.include_tag.set.success": "导出物品标签已设置为%s",
+
+    "itemexporter.command.config.json.minecraft_tag_only.get.success": "仅包含Minecraft命名空间中的标签：%s",
+    "itemexporter.command.config.json.minecraft_tag_only.set.success": "仅包含Minecraft命名空间中的标签已设置为%s",
+
+    "itemexporter.command.config.json.include_creative_tab.get.success": "导出物品所属创造模式物品栏标签：%s",
+    "itemexporter.command.config.json.include_creative_tab.set.success": "导出物品所属创造模式物品栏标签已设置为%s",
+
     "itemexporter.command.config.export.export_image.get.success": "导出图片：%s",
     "itemexporter.command.config.export.export_image.set.success": "导出图片已设置为%s",
 
-    "itemexporter.command.export.success": "导出%s个物品成功"
+    "itemexporter.command.config.image.size.get.success": "导出图片尺寸：%s",
+    "itemexporter.command.config.image.size.set.success": "导出图片尺寸已设置为%s"
 }
