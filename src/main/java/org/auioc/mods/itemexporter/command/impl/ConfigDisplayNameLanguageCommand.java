@@ -3,12 +3,12 @@ package org.auioc.mods.itemexporter.command.impl;
 import static net.minecraft.commands.Commands.argument;
 import static net.minecraft.commands.Commands.literal;
 import static org.auioc.mods.itemexporter.command.IEClientCommands.FEEDBACK_HELPER;
-import java.util.function.Function;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
-import org.auioc.mods.arnicalib.utils.game.LanguageUtils;
+import org.auioc.mods.arnicalib.client.command.argument.LanguageInfoArgument;
 import org.auioc.mods.itemexporter.config.IEConfig;
+import net.minecraft.client.resources.language.LanguageInfo;
 import net.minecraft.commands.CommandSourceStack;
 
 public class ConfigDisplayNameLanguageCommand {
@@ -18,8 +18,7 @@ public class ConfigDisplayNameLanguageCommand {
         .then(
             literal("add")
                 .then(
-                    argument("langCode", StringArgumentType.string())
-                        .suggests(LanguageUtils.ALL_LANGUAGES_SUGGESTION)
+                    argument("langInfo", LanguageInfoArgument.languageInfo())
                         .executes(ConfigDisplayNameLanguageCommand::add)
                 )
         )
@@ -39,23 +38,25 @@ public class ConfigDisplayNameLanguageCommand {
         });
         sb.delete(sb.length() - 2, sb.length());
 
-        return FEEDBACK_HELPER.success(ctx, "config.json.display_name_language.list", sb.toString());
+        return feedback(ctx, true, "list", sb.toString());
     }
 
     private static int add(CommandContext<CommandSourceStack> ctx) {
-        return processLangCodeArgument(ctx, (s) -> IEConfig.DISPLAY_NAME_LANGUAGE.add(s), "config.json.display_name_language.add");
+        var langInfo = ctx.getArgument("langInfo", LanguageInfo.class);
+        return feedback(ctx, IEConfig.DISPLAY_NAME_LANGUAGE.add(langInfo), "add", langInfo.getCode());
     }
 
     private static int remove(CommandContext<CommandSourceStack> ctx) {
-        return processLangCodeArgument(ctx, (s) -> IEConfig.DISPLAY_NAME_LANGUAGE.remove(s), "config.json.display_name_language.remove");
+        var langCode = StringArgumentType.getString(ctx, "langCode");
+        return feedback(ctx, IEConfig.DISPLAY_NAME_LANGUAGE.remove(langCode), "remove", langCode);
     }
 
-    private static int processLangCodeArgument(CommandContext<CommandSourceStack> ctx, Function<String, Boolean> action, String messageKey) {
-        var langCode = StringArgumentType.getString(ctx, "langCode");
-        if (action.apply(langCode)) {
-            return FEEDBACK_HELPER.success(ctx, messageKey, langCode);
+    private static int feedback(CommandContext<CommandSourceStack> ctx, boolean result, String actionName, String arg) {
+        var key = "config.json.display_name_language." + actionName;
+        if (result) {
+            return FEEDBACK_HELPER.success(ctx, key, arg);
         }
-        return FEEDBACK_HELPER.failure(ctx, messageKey, langCode);
+        return FEEDBACK_HELPER.failure(ctx, key, arg);
     }
 
 }

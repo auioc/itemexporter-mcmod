@@ -5,6 +5,7 @@ import java.util.Map;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
 import org.auioc.mods.arnicalib.utils.game.LanguageUtils;
 import net.minecraft.client.resources.language.ClientLanguage;
+import net.minecraft.client.resources.language.LanguageInfo;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.SharedSuggestionProvider;
 
@@ -12,16 +13,16 @@ public class IELanguageList {
 
     private final Map<String, ClientLanguage> map = new HashMap<String, ClientLanguage>() {
         {
-            put("en_us", LanguageUtils.getLanguage("en_us"));
+            put("en_us", LanguageUtils.getLanguage(LanguageUtils.DEFAULT_LANGUAGE));
             put("zh_cn", LanguageUtils.getLanguage("zh_cn"));
         }
     };
 
-    public boolean add(String langCode) {
-        if (this.map.containsKey(langCode)) {
+    public boolean add(LanguageInfo langInfo) {
+        if (this.map.containsKey(langInfo.getCode())) {
             return false;
         }
-        this.map.put(langCode, LanguageUtils.getLanguage(langCode));
+        this.map.put(langInfo.getCode(), LanguageUtils.getLanguage(langInfo));
         return true;
     }
 
