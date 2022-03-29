@@ -27,7 +27,7 @@ public class IEClientCommands {
         NODE.addChild(ConfigCommand.NODE);
         NODE.addChild(ExportCommand.NODE);
 
-        AHClientCommands.getRootNode(event.getDispatcher()).addChild(NODE);
+        AHClientCommands.getAHNode(event.getDispatcher()).addChild(NODE);
     }
 
 }
