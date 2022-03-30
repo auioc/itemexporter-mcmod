@@ -8,6 +8,7 @@ import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 
 public class JsonBuilder {
 
@@ -66,8 +67,8 @@ public class JsonBuilder {
                 .forEach(arr::add);
             return arr;
         }).apply(item));
-
         json.addProperty("max_stack_size", item.getMaxStackSize());
+        json.addProperty("rarity", item.getRarity(new ItemStack(item)).toString().toLowerCase());
 
         return json;
     }
