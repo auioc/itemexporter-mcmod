@@ -7,6 +7,7 @@ import org.auioc.mods.arnicalib.common.command.impl.VersionCommand;
 import org.auioc.mods.arnicalib.utils.game.CommandUtils.CommandFeedbackHelper;
 import org.auioc.mods.arnicalib.utils.game.TextUtils;
 import org.auioc.mods.itemexporter.ItemExporter;
+import org.auioc.mods.itemexporter.command.impl.ClearCommand;
 import org.auioc.mods.itemexporter.command.impl.ConfigCommand;
 import org.auioc.mods.itemexporter.command.impl.ExportCommand;
 import net.minecraft.commands.CommandSourceStack;
@@ -24,6 +25,7 @@ public class IEClientCommands {
     public static void register(final RegisterClientCommandsEvent event) {
         VersionCommand.addVersionNode(NODE, ItemExporter.class);
 
+        NODE.addChild(ClearCommand.NODE);
         NODE.addChild(ConfigCommand.NODE);
         NODE.addChild(ExportCommand.NODE);
 

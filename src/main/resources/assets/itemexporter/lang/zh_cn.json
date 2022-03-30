@@ -3,6 +3,9 @@
 
     "itemexporter.command.prefix": "§b[ItemExporter]§r ",
 
+    "itemexporter.command.clear.success": "清除导出文件夹成功",
+    "itemexporter.command.clear.failure": "清除导出文件夹失败",
+
     "itemexporter.command.export.success": "导出%s个物品成功",
 
     "itemexporter.command.config.export.export_json.get.success": "导出JSON：%s",
