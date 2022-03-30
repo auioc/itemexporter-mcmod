@@ -68,6 +68,7 @@ public class JsonBuilder {
             return arr;
         }).apply(item));
         json.addProperty("max_stack_size", item.getMaxStackSize());
+        json.addProperty("max_damage", item.getMaxDamage());
         json.addProperty("rarity", item.getRarity(new ItemStack(item)).toString().toLowerCase());
 
         return json;
