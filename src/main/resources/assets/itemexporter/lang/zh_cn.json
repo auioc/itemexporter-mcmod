@@ -26,8 +26,8 @@
     "itemexporter.command.config.json.minecraft_tag_only.get.success": "仅包含Minecraft命名空间中的标签：%s",
     "itemexporter.command.config.json.minecraft_tag_only.set.success": "仅包含Minecraft命名空间中的标签已设置为%s",
 
-    "itemexporter.command.config.json.include_creative_tab.get.success": "导出物品所属创造模式物品栏标签：%s",
-    "itemexporter.command.config.json.include_creative_tab.set.success": "导出物品所属创造模式物品栏标签已设置为%s",
+    "itemexporter.command.config.json.include_properties.get.success": "导出物品属性：%s",
+    "itemexporter.command.config.json.include_properties.set.success": "导出物品属性已设置为%s",
 
     "itemexporter.command.config.export.export_image.get.success": "导出图片：%s",
     "itemexporter.command.config.export.export_image.set.success": "导出图片已设置为%s",

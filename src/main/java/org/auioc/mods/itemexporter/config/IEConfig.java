@@ -16,7 +16,7 @@ public final class IEConfig {
     public static final BooleanHolder JSON_INCLUDE_DISPLAY_NAME = new BooleanHolder(true);
     public static final IELanguageList DISPLAY_NAME_LANGUAGE = new IELanguageList();
 
-    public static final BooleanHolder JSON_INCLUDE_CREATIVE_TAB = new BooleanHolder(true);
+    public static final BooleanHolder JSON_INCLUDE_PROPERTIES = new BooleanHolder(true);
 
     // ====================================================================== //
 

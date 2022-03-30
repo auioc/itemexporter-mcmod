@@ -1,5 +1,6 @@
 package org.auioc.mods.itemexporter.exporter;
 
+import java.util.function.Function;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import org.auioc.mods.itemexporter.config.IEConfig;
@@ -20,8 +21,8 @@ public class JsonBuilder {
         if (IEConfig.JSON_INCLUDE_TAG.get()) {
             json.add("tags", buildTagJson(item));
         }
-        if (IEConfig.JSON_INCLUDE_CREATIVE_TAB.get()) {
-            json.add("creative_tabs", buildCreativeTabJson(item));
+        if (IEConfig.JSON_INCLUDE_PROPERTIES.get()) {
+            json.add("properties", buildPropertiesJson(item));
         }
 
         return json;
@@ -50,16 +51,20 @@ public class JsonBuilder {
         return json;
     }
 
-    private static JsonArray buildCreativeTabJson(Item item) {
-        var json = new JsonArray();
+    private static JsonObject buildPropertiesJson(Item item) {
+        var json = new JsonObject();
 
-        item.getCreativeTabs()
-            .stream()
-            .filter((tab) -> tab != null)
-            .map((tab) -> (TranslatableComponent) tab.getDisplayName())
-            .map(TranslatableComponent::getKey)
-            .map((name) -> name.replaceFirst("^itemGroup\\.", ""))
-            .forEach(((name) -> json.add(name)));
+        json.add("creative_mode_tabs", ((Function<Item, JsonArray>) (_item) -> {
+            var arr = new JsonArray();
+            _item.getCreativeTabs()
+                .stream()
+                .filter((tab) -> tab != null)
+                .map((tab) -> (TranslatableComponent) tab.getDisplayName())
+                .map(TranslatableComponent::getKey)
+                .map((name) -> name.replaceFirst("^itemGroup\\.", ""))
+                .forEach(arr::add);
+            return arr;
+        }).apply(item));
 
         return json;
     }

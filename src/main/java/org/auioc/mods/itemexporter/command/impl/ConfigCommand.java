@@ -23,7 +23,7 @@ public class ConfigCommand {
                 .then(ConfigDisplayNameLanguageCommand.BUILDER)
                 .then(createBooleanConfigNode("includeTag", IEConfig.JSON_INCLUDE_TAG))
                 .then(createBooleanConfigNode("includeDisplayName", IEConfig.JSON_INCLUDE_DISPLAY_NAME))
-                .then(createBooleanConfigNode("includeCreativeTab", IEConfig.JSON_INCLUDE_CREATIVE_TAB))
+                .then(createBooleanConfigNode("includeProperties", IEConfig.JSON_INCLUDE_PROPERTIES))
                 .then(createBooleanConfigNode("minecraftTagOnly", IEConfig.MINECRAFT_TAG_ONLY))
         )
         .then(
