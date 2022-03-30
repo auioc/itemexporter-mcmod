@@ -51,6 +51,7 @@ public class JsonBuilder {
         return json;
     }
 
+    @SuppressWarnings("deprecation")
     private static JsonObject buildPropertiesJson(Item item) {
         var json = new JsonObject();
 
@@ -65,6 +66,8 @@ public class JsonBuilder {
                 .forEach(arr::add);
             return arr;
         }).apply(item));
+
+        json.addProperty("max_stack_size", item.getMaxStackSize());
 
         return json;
     }
