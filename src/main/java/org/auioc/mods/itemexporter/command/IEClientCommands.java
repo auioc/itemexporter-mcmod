@@ -2,10 +2,10 @@ package org.auioc.mods.itemexporter.command;
 
 import static net.minecraft.commands.Commands.literal;
 import com.mojang.brigadier.tree.CommandNode;
-import org.auioc.mods.arnicalib.client.command.AHClientCommands;
-import org.auioc.mods.arnicalib.common.command.impl.VersionCommand;
-import org.auioc.mods.arnicalib.utils.game.CommandUtils.CommandFeedbackHelper;
-import org.auioc.mods.arnicalib.utils.game.TextUtils;
+import org.auioc.mcmod.arnicalib.client.command.AHClientCommands;
+import org.auioc.mcmod.arnicalib.common.command.impl.VersionCommand;
+import org.auioc.mcmod.arnicalib.utils.game.CommandUtils.CommandFeedbackHelper;
+import org.auioc.mcmod.arnicalib.utils.game.TextUtils;
 import org.auioc.mods.itemexporter.ItemExporter;
 import org.auioc.mods.itemexporter.command.impl.ClearCommand;
 import org.auioc.mods.itemexporter.command.impl.ConfigCommand;

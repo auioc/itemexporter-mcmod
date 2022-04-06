@@ -6,7 +6,7 @@ import static org.auioc.mods.itemexporter.command.IEClientCommands.FEEDBACK_HELP
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
-import org.auioc.mods.arnicalib.client.command.argument.LanguageInfoArgument;
+import org.auioc.mcmod.arnicalib.client.command.argument.LanguageInfoArgument;
 import org.auioc.mods.itemexporter.config.IEConfig;
 import net.minecraft.client.resources.language.LanguageInfo;
 import net.minecraft.commands.CommandSourceStack;

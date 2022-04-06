@@ -3,7 +3,7 @@ package org.auioc.mods.itemexporter.api;
 import java.util.HashMap;
 import java.util.Map;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
-import org.auioc.mods.arnicalib.utils.game.LanguageUtils;
+import org.auioc.mcmod.arnicalib.utils.game.LanguageUtils;
 import net.minecraft.client.resources.language.ClientLanguage;
 import net.minecraft.client.resources.language.LanguageInfo;
 import net.minecraft.commands.CommandSourceStack;

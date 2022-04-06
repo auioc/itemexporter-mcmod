@@ -8,10 +8,10 @@ import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.tree.CommandNode;
-import org.auioc.mods.arnicalib.api.java.holder.BooleanHolder;
-import org.auioc.mods.arnicalib.api.java.holder.IntegerHolder;
-import org.auioc.mods.arnicalib.api.java.holder.ObjectHolder;
-import org.auioc.mods.arnicalib.utils.game.CommandUtils;
+import org.auioc.mcmod.arnicalib.api.java.holder.BooleanHolder;
+import org.auioc.mcmod.arnicalib.api.java.holder.IntegerHolder;
+import org.auioc.mcmod.arnicalib.api.java.holder.ObjectHolder;
+import org.auioc.mcmod.arnicalib.utils.game.CommandUtils;
 import org.auioc.mods.itemexporter.config.IEConfig;
 import net.minecraft.commands.CommandSourceStack;
 
