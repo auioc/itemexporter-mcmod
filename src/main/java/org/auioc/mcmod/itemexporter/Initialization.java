@@ -1,6 +1,6 @@
-package org.auioc.mods.itemexporter;
+package org.auioc.mcmod.itemexporter;
 
-import org.auioc.mods.itemexporter.command.IEClientCommands;
+import org.auioc.mcmod.itemexporter.command.IEClientCommands;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;

@@ -1,8 +1,8 @@
-package org.auioc.mods.itemexporter.command.impl;
+package org.auioc.mcmod.itemexporter.command.impl;
 
 import static net.minecraft.commands.Commands.argument;
 import static net.minecraft.commands.Commands.literal;
-import static org.auioc.mods.itemexporter.command.IEClientCommands.FEEDBACK_HELPER;
+import static org.auioc.mcmod.itemexporter.command.IEClientCommands.FEEDBACK_HELPER;
 import com.mojang.brigadier.arguments.BoolArgumentType;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
@@ -12,7 +12,7 @@ import org.auioc.mcmod.arnicalib.api.java.holder.BooleanHolder;
 import org.auioc.mcmod.arnicalib.api.java.holder.IntegerHolder;
 import org.auioc.mcmod.arnicalib.api.java.holder.ObjectHolder;
 import org.auioc.mcmod.arnicalib.utils.game.CommandUtils;
-import org.auioc.mods.itemexporter.config.IEConfig;
+import org.auioc.mcmod.itemexporter.config.IEConfig;
 import net.minecraft.commands.CommandSourceStack;
 
 public class ConfigCommand {

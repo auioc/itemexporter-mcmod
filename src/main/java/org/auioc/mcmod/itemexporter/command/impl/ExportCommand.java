@@ -1,8 +1,8 @@
-package org.auioc.mods.itemexporter.command.impl;
+package org.auioc.mcmod.itemexporter.command.impl;
 
 import static net.minecraft.commands.Commands.argument;
 import static net.minecraft.commands.Commands.literal;
-import static org.auioc.mods.itemexporter.command.IEClientCommands.FEEDBACK_HELPER;
+import static org.auioc.mcmod.itemexporter.command.IEClientCommands.FEEDBACK_HELPER;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map.Entry;
@@ -11,7 +11,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.tree.CommandNode;
 import org.auioc.mcmod.arnicalib.common.command.argument.CreativeModeTabArgument;
 import org.auioc.mcmod.arnicalib.utils.game.CommandUtils;
-import org.auioc.mods.itemexporter.exporter.Exporter;
+import org.auioc.mcmod.itemexporter.exporter.Exporter;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.CreativeModeTab;

@@ -1,4 +1,4 @@
-package org.auioc.mods.itemexporter.api;
+package org.auioc.mcmod.itemexporter.api;
 
 import java.util.HashMap;
 import java.util.Map;

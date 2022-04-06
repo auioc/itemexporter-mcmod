@@ -1,8 +1,8 @@
-package org.auioc.mods.itemexporter.config;
+package org.auioc.mcmod.itemexporter.config;
 
 import org.auioc.mcmod.arnicalib.api.java.holder.BooleanHolder;
 import org.auioc.mcmod.arnicalib.api.java.holder.IntegerHolder;
-import org.auioc.mods.itemexporter.api.IELanguageList;
+import org.auioc.mcmod.itemexporter.api.IELanguageList;
 
 public final class IEConfig {
 

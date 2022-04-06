@@ -1,13 +1,13 @@
-package org.auioc.mods.itemexporter.exporter;
+package org.auioc.mcmod.itemexporter.exporter;
 
-import static org.auioc.mods.itemexporter.ItemExporter.LOGGER;
+import static org.auioc.mcmod.itemexporter.ItemExporter.LOGGER;
 import java.io.IOException;
 import java.util.List;
 import org.apache.logging.log4j.Marker;
 import org.auioc.mcmod.arnicalib.utils.LogUtil;
 import org.auioc.mcmod.arnicalib.utils.java.FileUtils;
-import org.auioc.mods.itemexporter.config.IEConfig;
-import org.auioc.mods.itemexporter.renderer.IEItemRenderer;
+import org.auioc.mcmod.itemexporter.config.IEConfig;
+import org.auioc.mcmod.itemexporter.renderer.IEItemRenderer;
 import net.minecraft.world.item.Item;
 
 public class Exporter {

@@ -1,4 +1,4 @@
-package org.auioc.mods.itemexporter.renderer;
+package org.auioc.mcmod.itemexporter.renderer;
 
 import com.mojang.blaze3d.pipeline.TextureTarget;
 import com.mojang.blaze3d.platform.NativeImage;

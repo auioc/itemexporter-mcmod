@@ -1,9 +1,9 @@
-package org.auioc.mods.itemexporter.exporter;
+package org.auioc.mcmod.itemexporter.exporter;
 
 import java.util.function.Function;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import org.auioc.mods.itemexporter.config.IEConfig;
+import org.auioc.mcmod.itemexporter.config.IEConfig;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;

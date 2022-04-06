@@ -1,15 +1,15 @@
-package org.auioc.mods.itemexporter.command;
+package org.auioc.mcmod.itemexporter.command;
 
 import static net.minecraft.commands.Commands.literal;
 import com.mojang.brigadier.tree.CommandNode;
 import org.auioc.mcmod.arnicalib.client.command.AHClientCommands;
 import org.auioc.mcmod.arnicalib.common.command.impl.VersionCommand;
 import org.auioc.mcmod.arnicalib.utils.game.CommandUtils.CommandFeedbackHelper;
+import org.auioc.mcmod.itemexporter.ItemExporter;
+import org.auioc.mcmod.itemexporter.command.impl.ClearCommand;
+import org.auioc.mcmod.itemexporter.command.impl.ConfigCommand;
+import org.auioc.mcmod.itemexporter.command.impl.ExportCommand;
 import org.auioc.mcmod.arnicalib.utils.game.TextUtils;
-import org.auioc.mods.itemexporter.ItemExporter;
-import org.auioc.mods.itemexporter.command.impl.ClearCommand;
-import org.auioc.mods.itemexporter.command.impl.ConfigCommand;
-import org.auioc.mods.itemexporter.command.impl.ExportCommand;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;

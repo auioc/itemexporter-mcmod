@@ -1,7 +1,7 @@
-package org.auioc.mods.itemexporter.command.impl;
+package org.auioc.mcmod.itemexporter.command.impl;
 
 import static net.minecraft.commands.Commands.literal;
-import static org.auioc.mods.itemexporter.command.IEClientCommands.FEEDBACK_HELPER;
+import static org.auioc.mcmod.itemexporter.command.IEClientCommands.FEEDBACK_HELPER;
 import java.io.File;
 import java.io.IOException;
 import com.mojang.brigadier.context.CommandContext;
